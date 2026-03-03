@@ -1,0 +1,113 @@
+.auth-page-wrapper {
+    min-height: 80vh;
+}
+
+.auth-card-signup {
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 500px;
+    box-shadow: var(--shadow-lg);
+}
+
+.auth-card-login {
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.auth-title {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    color: var(--text-muted);
+}
+
+.auth-role-toggle {
+    display: flex;
+    background: #f0f4f8;
+    padding: 0.4rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+}
+
+/* Base button styles to complement React's className handling */
+.auth-role-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.auth-role-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.auth-radio-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.auth-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.auth-input-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-input-group-last {
+    margin-bottom: 2rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid #eee;
+    outline: none;
+}
+
+.auth-input:focus {
+    border-color: var(--primary);
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-footer-text {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-muted);
+}
+
+.auth-footer-link {
+    color: var(--primary);
+    font-weight: 600;
+}

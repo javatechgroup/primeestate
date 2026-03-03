@@ -1,0 +1,80 @@
+.mobile-filter-btn {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.search-city-highlight {
+    color: var(--primary);
+}
+
+.property-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.property-card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.property-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.property-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.property-location {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.property-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+
+.property-features {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.property-action-btn {
+    flex: 1;
+}
+
+.no-results-container {
+    padding: 4rem;
+    text-align: center;
+    background: white;
+    border-radius: var(--radius-lg);
+}
+
+.no-results-title {
+    color: var(--text-muted);
+}
+
+.no-results-message {
+    margin-top: 0.5rem;
+}

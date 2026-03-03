@@ -1,0 +1,149 @@
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0 0.5rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid #eee;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pagination-nav-btn {
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.pagination-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-pages-group {
+    display: flex;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.pagination-page-btn {
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+    background-color: white;
+    color: var(--primary);
+}
+
+.pagination-page-btn.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Filters */
+.filter-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: inherit;
+}
+
+.filter-close-btn {
+    background: transparent;
+    color: var(--text-main);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+/* CitySearch */
+.city-search-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    color: var(--text-main);
+    text-align: left;
+}
+
+.city-search-input-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 0 1rem;
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    height: 100%;
+    position: relative;
+}
+
+.city-search-input-container.error {
+    border-color: #ff4d4f;
+}
+
+.city-search-input {
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    color: var(--text-main);
+    text-align: left;
+}
+
+.city-search-input.error {
+    color: #ff4d4f;
+}
+
+.city-search-clear-icon {
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.city-search-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background-color: white;
+    text-align: left;
+}
+
+.city-search-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: var(--text-main);
+    transition: background 0.2s;
+    text-align: left;
+}
+
+.city-search-item:last-child {
+    border-bottom: none;
+}
+
+.city-search-item:hover {
+    background-color: #f0f4f8;
+}

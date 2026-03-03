@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #002f5d;
+  /* Magicbricks Navy */
+  --primary-light: #004a8d;
+  --secondary: #fcd34d;
+  /* Gold/Amber Accent */
+  --accent: #ff4136;
+  --bg-main: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --border-color: #e9ecef;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+input.error-placeholder::placeholder {
+  color: #ff4d4f;
+  opacity: 1;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* utility */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-slim {
+  padding: 0.35rem 0.65rem !important;
+  font-size: 0.8rem !important;
+  border-width: 1px !important;
+  border-radius: var(--radius-sm) !important;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   Responsive Design & Media Queries 
+   ========================================== */
+
+/* Utility Classes */
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-only {
+  display: flex !important;
+}
+
+.mobile-link {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.mobile-link:hover {
+  background-color: var(--bg-main);
+  color: var(--primary);
+}
+
+/* Base layouts */
+.search-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
+}
+
+.property-card {
+  display: flex;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.property-card img {
+  width: 250px;
+  object-fit: cover;
+}
+
+.property-card-slim {
+  display: flex;
+  flex-direction: column;
+}
+
+.property-card-slim img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.property-card-slim .card-content {
+  padding: 1.5rem;
+}
+
+.property-card-slim .card-content p {
+  font-size: 0.9rem;
+}
+
+.property-card-slim .card-content button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+/* Sidebar Filters */
+.filters-sidebar {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 100px;
+}
+
+.filter-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.preset-select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.bhk-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bhk-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius-sm);
+  background: white;
+  color: inherit;
+}
+
+.bhk-btn.active {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+.type-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.type-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.apply-filters-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Specific Search Page Elements */
+.search-page-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-page-header h2 {
+  font-size: 1.8rem;
+}
+
+.search-page-header span {
+  color: var(--text-muted);
+}
+
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+/* Pricing Page Elements */
+.pricing-card {
+  padding: 3rem 2rem;
+  border-radius: var(--radius-lg);
+  position: relative;
+  border: 1px solid #eee;
+}
+
+.pricing-card.recommended {
+  border: 2px solid var(--secondary);
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pricing-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing-icon {
+  margin-bottom: 1rem;
+}
+
+.pricing-card-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card-header .price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.pricing-btn {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Mobile Breakpoint (< 768px) */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Adjust Container Padding */
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+
+  /* Search Page Layout */
+  .search-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .search-layout aside {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 2rem;
+    display: none;
+  }
+
+  .search-layout aside.show-mobile-filters {
+    display: block;
+  }
+
+  /* Property Cards */
+  .property-card {
+    flex-direction: column;
+  }
+
+  .property-card img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .property-card-slim {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .property-card-slim img {
+    width: 120px;
+    height: auto;
+    min-height: 140px;
+    flex-shrink: 0;
+  }
+
+  .property-card-slim .card-content {
+    padding: 0.85rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .property-card-slim .card-content h3,
+  .property-card-slim .card-content h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2;
+  }
+
+  .property-card-slim .card-content p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .property-card-slim .card-content button {
+    margin-top: 0;
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Structural Fixes for Mobile Search Page */
+  .search-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-page-header h2 {
+    font-size: 1.4rem !important;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  .card-actions {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+  }
+
+  .card-actions button {
+    width: 100%;
+  }
+
+  /* Mobile Sidebar Overrides */
+  .filters-sidebar.show-mobile-filters {
+    padding: 1.25rem !important;
+    height: auto !important;
+    max-height: 85vh;
+  }
+
+  .filter-group {
+    margin-bottom: 1.1rem;
+  }
+
+  .filter-header {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .bhk-btn {
+    padding: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .preset-select {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .apply-filters-btn {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  /* Slim Pricing Cards */
+  .pricing-card {
+    padding: 1.5rem 1.25rem;
+    transform: none !important;
+  }
+
+  .pricing-card.recommended {
+    transform: none !important;
+  }
+
+  .pricing-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    margin-bottom: 1.25rem;
+  }
+
+  .pricing-icon {
+    margin-bottom: 0;
+  }
+
+  .pricing-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pricing-card-header h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .pricing-card-header .price {
+    font-size: 1.75rem !important;
+  }
+
+  .pricing-features {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .pricing-features li {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .pricing-badge {
+    top: -12px;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.75rem;
+  }
+
+  .pricing-btn {
+    padding: 0.75rem !important;
+    font-size: 1rem;
+  }
+
+  /* Typography Adjustments */
+  h1 {
+    font-size: 2.2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Dashboard Responsiveness */
+  .dashboard-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.3rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .dashboard-header p {
+    font-size: 0.85rem !important;
+  }
+
+  .dashboard-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: stretch;
+  }
+
+  .dashboard-actions>button {
+    flex: 1 1 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.5rem;
+  }
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Dashboard Stats Row */
+.stats-row {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+  /* Prevent scrollbar from clipping shadow */
+  margin-bottom: 2rem;
+}
+
+.stat-clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem 0 1rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1rem 0 0.5rem;
+  }
+
+  .footer-grid {
+    gap: 1rem;
+  }
+
+  .site-footer h4,
+  .site-footer .footer-logo {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .site-footer .copyright-text {
+    margin-top: 1rem !important;
+    padding-top: 0.5rem !important;
+  }
+
+  .site-footer p {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+.footer-links-row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .footer-links-row {
+    gap: 0.5rem;
+  }
+}
