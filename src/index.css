@@ -21,6 +21,16 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.dark {
+  --primary: #3b82f6;
+  --primary-light: #60a5fa;
+  --secondary: #fbbf24;
+  --bg-main: #121212;
+  --bg-card: #1e1e1e;
+  --text-main: #f8f9fa;
+  --text-muted: #adb5bd;
+  --border-color: #333333;
+}
 
 
 * {
@@ -103,6 +113,10 @@ label {
   justify-content: center;
 }
 
+.gap-1 {
+  gap: 0.5rem;
+}
+
 .section-padding {
   padding: 4rem 0;
 }
@@ -143,6 +157,25 @@ label {
   white-space: nowrap;
 }
 
+.theme-toggle-btn {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--bg-main);
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
 /* ==========================================
    Responsive Design & Media Queries 
    ========================================== */
@@ -180,10 +213,8 @@ label {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
 }
 
 .property-card img {
@@ -218,7 +249,7 @@ label {
 
 /* Sidebar Filters */
 .filters-sidebar {
-  background-color: white;
+  background-color: var(--bg-card);
   padding: 2rem;
   border-radius: var(--radius-lg);
   height: calc(100vh - 120px);
@@ -249,6 +280,9 @@ label {
   width: 100%;
   padding: 0.75rem;
   border-radius: var(--radius-sm);
+  color: var(--text-main);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
 }
 
 .bhk-buttons {
@@ -259,15 +293,15 @@ label {
 .bhk-btn {
   flex: 1;
   padding: 0.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  background: white;
+  background: var(--bg-card);
   color: inherit;
 }
 
 .bhk-btn.active {
   background: var(--primary);
-  color: white;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -383,6 +417,10 @@ label {
 @media (max-width: 768px) {
   .mobile-only {
     display: block !important;
+  }
+
+  .mobile-only.flex-center {
+    display: flex !important;
   }
 
   .desktop-only {

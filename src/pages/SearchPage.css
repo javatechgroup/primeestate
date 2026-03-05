@@ -67,7 +67,7 @@
 .no-results-container {
     padding: 4rem;
     text-align: center;
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
 }
 

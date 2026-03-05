@@ -41,7 +41,7 @@ const Filters = ({ localFilters, setLocalFilters, handleApplyFilters, isMobileFi
             <div className="filter-group">
                 <label>Bedrooms (BHK)</label>
                 <div className="bhk-buttons">
-                    {['1', '2', '3', '4+'].map(b => (
+                    {['1', '2', '3', '4', '5', '6', '7+'].map(b => (
                         <button
                             key={b}
                             onClick={() => setLocalFilters(prev => ({ ...prev, bhk: localFilters.bhk === b ? '' : b }))}
@@ -55,19 +55,15 @@ const Filters = ({ localFilters, setLocalFilters, handleApplyFilters, isMobileFi
 
             <div className="filter-group">
                 <label>Property Type</label>
-                <div className="type-options">
+                <select
+                    className="glass preset-select"
+                    value={localFilters.type}
+                    onChange={(e) => setLocalFilters(prev => ({ ...prev, type: e.target.value }))}
+                >
                     {['All', 'Apartment', 'Villa', 'Independent House', 'Plot'].map(t => (
-                        <label key={t} className="type-label">
-                            <input
-                                type="radio"
-                                name="propertyType"
-                                checked={t === 'All' ? localFilters.type === 'All' : localFilters.type === t}
-                                onChange={() => setLocalFilters(prev => ({ ...prev, type: t }))}
-                            />
-                            {t}
-                        </label>
+                        <option key={t} value={t}>{t}</option>
                     ))}
-                </div>
+                </select>
             </div>
 
             <button onClick={handleApplyFilters} className="btn-primary apply-filters-btn">Apply Filters</button>

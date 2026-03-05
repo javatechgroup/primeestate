@@ -6,6 +6,7 @@ import AppRoutes from './routes/AppRoutes';
 
 import { AuthContext } from './context/AuthContext';
 import { SearchProvider } from './context/SearchContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   console.log('App component is rendering');
@@ -28,17 +29,19 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
-      <SearchProvider>
-        <Router>
-          <div className="app-container">
-            <Navbar />
-            <main className="main-content">
-              <AppRoutes />
-            </main>
-            <Footer />
-          </div>
-        </Router>
-      </SearchProvider>
+      <ThemeProvider>
+        <SearchProvider>
+          <Router>
+            <div className="app-container">
+              <Navbar />
+              <main className="main-content">
+                <AppRoutes />
+              </main>
+              <Footer />
+            </div>
+          </Router>
+        </SearchProvider>
+      </ThemeProvider>
     </AuthContext.Provider>
   );
 }
