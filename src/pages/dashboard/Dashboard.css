@@ -260,6 +260,34 @@
     color: #fff;
 }
 
+/* Dark Mode Action Button Overrides */
+.dark .action-btn-primary {
+    background-color: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.dark .action-btn-primary:hover {
+    background-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark .action-btn-danger {
+    background-color: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.dark .action-btn-danger:hover {
+    background-color: rgba(239, 68, 68, 0.3);
+}
+
+.dark .action-btn-outline {
+    color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+.dark .action-btn-outline:hover {
+    background-color: rgba(96, 165, 250, 0.15);
+}
+
 .table-contact-name {
     font-weight: 600;
     font-size: 1rem;
@@ -366,4 +394,3 @@
         padding: 1.5rem 1rem;
     }
 }
-
