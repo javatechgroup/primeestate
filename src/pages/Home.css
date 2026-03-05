@@ -35,6 +35,10 @@
     flex-wrap: wrap;
 }
 
+.dark .hero-search-box {
+    border: 1px solid var(--primary);
+}
+
 .hero-search-type {
     flex: 1;
     min-width: 200px;
@@ -53,6 +57,41 @@
     width: 100%;
     outline: none;
     background: transparent;
+}
+
+/* Force white background and dark text for hero search components in all themes */
+.hero-search-type,
+.hero-search-box .city-search-input-container {
+    background-color: white !important;
+    color: #2d3748 !important;
+    border-color: #e2e8f0 !important;
+}
+
+.hero-search-type select,
+.hero-search-box .city-search-input {
+    color: #2d3748 !important;
+}
+
+.hero-search-box .city-search-clear-icon {
+    color: #718096 !important;
+}
+
+.hero-search-box .city-search-dropdown {
+    background-color: white !important;
+    color: #2d3748 !important;
+}
+
+.hero-search-box .city-search-item {
+    color: #2d3748 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.hero-search-box .city-search-item:last-child {
+    border-bottom: none !important;
+}
+
+.hero-search-box .city-search-item:hover {
+    background-color: #f7fafc !important;
 }
 
 .hero-search-button {
