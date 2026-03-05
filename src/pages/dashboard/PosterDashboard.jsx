@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { FileText, BarChart3, Plus } from 'lucide-react';
 import Pagination from '../../components/common/Pagination';
+import WelcomeCard from './WelcomeCard';
 import './Dashboard.css';
 
 const PosterDashboard = () => {
@@ -55,23 +56,21 @@ const PosterDashboard = () => {
 
     return (
         <div className="container section-padding animate-fade-in">
-            <div className="dashboard-header glass dashboard-header-container poster-header-container">
-                <div>
-                    <h1 className="dashboard-title-large">Welcome, {user?.name || 'Seller'}</h1>
-                    <p className="dashboard-subtitle">Manage your property listings and track performance</p>
-                </div>
-                <div className="dashboard-actions dashboard-actions-group">
-                    <button
-                        className="btn-outline dashboard-switch-btn-large"
-                        onClick={() => window.location.href = '/dashboard/searcher'}
-                    >
-                        Switch to Searcher
-                    </button>
-                    <button className="btn-primary dashboard-switch-btn-large">
-                        <Plus size={20} /> Post New Property
-                    </button>
-                </div>
-            </div>
+            <WelcomeCard
+                title={`Welcome, ${user?.name || 'Seller'}`}
+                subtitle="Manage your property listings and track performance"
+                containerClass="poster-header-container"
+            >
+                <button
+                    className="btn-outline dashboard-switch-btn-large"
+                    onClick={() => window.location.href = '/dashboard/searcher'}
+                >
+                    Switch to Searcher
+                </button>
+                <button className="btn-primary dashboard-switch-btn-large">
+                    <Plus size={20} /> Post New Property
+                </button>
+            </WelcomeCard>
 
             <div className="stats-row">
                 {stats.map((s, i) => (

@@ -3,6 +3,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { Heart, MessageSquare, Search } from 'lucide-react';
 import PropertyCard from '../../components/common/PropertyCard';
+import WelcomeCard from './WelcomeCard';
 import './Dashboard.css';
 
 const recommendedProperties = [
@@ -15,20 +16,20 @@ const SearcherDashboard = () => {
 
     return (
         <div className="container section-padding animate-fade-in">
-            <div className="dashboard-header glass dashboard-header-container">
-                <div>
-                    <h1 className="dashboard-title-medium">Welcome back, {user?.name || 'Explorer'}</h1>
-                    <p className="searcher-subtitle">Resume your search for the perfect home</p>
-                </div>
-                <div className="dashboard-actions">
-                    <button
-                        className="btn-outline dashboard-switch-btn"
-                        onClick={() => window.location.href = '/dashboard/poster'}
-                    >
-                        Switch to Poster
-                    </button>
-                </div>
-            </div>
+            <WelcomeCard
+                title={`Welcome back, ${user?.name || 'Explorer'}`}
+                subtitle="Resume your search for the perfect home"
+                titleClass="dashboard-title-medium"
+                subtitleClass="searcher-subtitle"
+                actionsClass=""
+            >
+                <button
+                    className="btn-outline dashboard-switch-btn"
+                    onClick={() => window.location.href = '/dashboard/poster'}
+                >
+                    Switch to Poster
+                </button>
+            </WelcomeCard>
 
             <div className="dashboard-grid-3col">
                 {/* Shortlisted Card */}
