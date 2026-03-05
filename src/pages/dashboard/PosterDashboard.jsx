@@ -55,7 +55,7 @@ const PosterDashboard = () => {
 
     return (
         <div className="container section-padding animate-fade-in">
-            <div className="dashboard-header poster-header-container">
+            <div className="dashboard-header glass dashboard-header-container poster-header-container">
                 <div>
                     <h1 className="dashboard-title-large">Welcome, {user?.name || 'Seller'}</h1>
                     <p className="dashboard-subtitle">Manage your property listings and track performance</p>

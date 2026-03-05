@@ -86,6 +86,12 @@
     flex-shrink: 0;
 }
 
+.dark .poster-stat-card,
+.dark .stat-card,
+.dark .dashboard-header-container {
+    border: 1px solid var(--primary);
+}
+
 .stat-icon-wrapper {
     padding: 0.75rem;
     border-radius: var(--radius-md);
