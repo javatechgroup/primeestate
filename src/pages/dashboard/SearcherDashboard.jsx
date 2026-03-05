@@ -2,7 +2,13 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import { Heart, MessageSquare, Search } from 'lucide-react';
+import PropertyCard from '../../components/common/PropertyCard';
 import './Dashboard.css';
+
+const recommendedProperties = [
+    { id: 1, title: 'Premium 2BHK in Sarjapur', location: 'Sarjapur, Bangalore', city: 'Bangalore', type: 'Apartment', price: '85 Lac', beds: 2, baths: 2, sqft: 1200, image: '/images/property-2.png' },
+    { id: 2, title: 'Luxury Penthouse in South Delhi', location: 'Saket, Delhi', city: 'Delhi', type: 'Apartment', price: '5.5 Cr', beds: 4, baths: 4, sqft: 3800, image: '/images/property-1.png' },
+];
 
 const SearcherDashboard = () => {
     const { user } = useContext(AuthContext);
@@ -64,18 +70,8 @@ const SearcherDashboard = () => {
 
             <h2 className="section-title">Recommended for You</h2>
             <div className="dashboard-grid-cards">
-                {[1, 2].map(item => (
-                    <div key={item} className="property-card-slim glass property-card-slim-wrapper">
-                        <img
-                            src="/images/property-2.png"
-                            alt="Property"
-                        />
-                        <div className="card-content">
-                            <h4 className="property-card-title">Premium 2BHK in Sarjapur</h4>
-                            <p className="property-card-location">Bangalore | ₹85 Lac</p>
-                            <button className="btn-primary property-card-btn">View Property</button>
-                        </div>
-                    </div>
+                {recommendedProperties.map(property => (
+                    <PropertyCard key={property.id} property={property} />
                 ))}
             </div>
         </div>
